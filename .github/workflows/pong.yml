@@ -15,5 +15,5 @@ jobs:
     #   with:
     #     who-to-greet: 'Mona the Octocat'
     - run: |
-        apt-get install -y tree
+        sudo apt-get install -y tree
         tree
