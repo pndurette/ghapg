@@ -25,4 +25,4 @@ jobs:
         echo ::set-output name=greeting::Hello
         echo ::set-env name=WHO::World
     - run: |
-        echo ${{ steps.some_step.outputs.greeting } $WHO!"
+        echo ${{ steps.some_step.outputs.greeting }} $WHO!"
