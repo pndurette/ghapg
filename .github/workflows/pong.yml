@@ -13,8 +13,10 @@ jobs:
     #     issue-message: 'Message that will be displayed on users'' first issue'
     #     pr-message: 'Message that will be displayed on users'' first pr'
     - uses: ./.github/actions/reply
+      id: hello
       with:
         who-to-greet: 'Mona the Octocat'
     # - run: sudo apt-get install -y tree
     # - run: tree .
     # - run: tree /home/runner/work/ghapg/.github
+    - run: echo "The previous action was run at ${{ steps.hello.outputs.time }}"
