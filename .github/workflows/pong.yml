@@ -11,6 +11,10 @@ jobs:
     #     repo-token: ${{ secrets.GITHUB_TOKEN }}
     #     issue-message: 'Message that will be displayed on users'' first issue'
     #     pr-message: 'Message that will be displayed on users'' first pr'
-    - uses: ./.github/actions/reply
-      with:
-        who-to-greet: 'Mona the Octocat'
+    # - uses: ./.github/actions/reply
+    #   with:
+    #     who-to-greet: 'Mona the Octocat'
+    - run: |
+        pwd
+        ls -la ./.github/actions/reply
+        ls -la .github/actions/reply
