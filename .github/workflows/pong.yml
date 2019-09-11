@@ -23,6 +23,6 @@ jobs:
     - id: some_step
       run: |
         echo ::set-output name=greeting::Hello
-        echo ::set-env name=who::World
+        echo ::set-env name=WHO::World
     - run: |
         echo ${{ steps.some_step.outputs.greeting }} $WHO!
