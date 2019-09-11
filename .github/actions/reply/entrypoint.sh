@@ -1,5 +1,10 @@
-#!/bin/sh -l
+#!/bin/sh
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+set -e
+set -o pipefail
+
+main() {
+   jq --raw-output . "$GITHUB_EVENT_PATH"
+}
+
+main
