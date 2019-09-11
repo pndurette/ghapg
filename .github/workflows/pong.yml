@@ -14,5 +14,6 @@ jobs:
     # - uses: ./.github/actions/reply
     #   with:
     #     who-to-greet: 'Mona the Octocat'
-    - run: |
-        sudo apt-get install -y tree && tree
+    - run: sudo apt-get install -y tree
+    - run: tree .
+    - run: tree /home/runner/work/ghapg/
