@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 # set -e
 # set -o pipefail
 
 main() {
-   echo jq --raw-output . "$GITHUB_EVENT_PATH"
+   jq --raw-output . "$GITHUB_EVENT_PATH"
 }
 
 main
