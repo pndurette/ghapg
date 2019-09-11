@@ -16,5 +16,4 @@ jobs:
     #     who-to-greet: 'Mona the Octocat'
     - run: |
         pwd
-        ls -la ./.github/actions/reply
-        ls -la .github/actions/reply
+        ls -la ./.github/actions/reply/
