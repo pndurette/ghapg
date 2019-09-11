@@ -15,5 +15,5 @@ jobs:
     #   with:
     #     who-to-greet: 'Mona the Octocat'
     - run: |
-        pwd
-        ls -la ./.github/actions/reply/
+        apt-get install -y tree
+        tree
