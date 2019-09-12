@@ -10,7 +10,6 @@ FROM alpine:3.10
 
 # Utils
 RUN apk add --no-cache \
-    bash \
     jq \
     curl
 
