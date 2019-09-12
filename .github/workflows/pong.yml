@@ -18,6 +18,8 @@ jobs:
     #     issue-message: 'Message that will be displayed on users'' first issue'
     #     pr-message: 'Message that will be displayed on users'' first pr'
     - uses: ./.github/actions/reply
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
       # env:
       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # with:

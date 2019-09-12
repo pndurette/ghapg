@@ -1,17 +1,11 @@
 name: 'Reply'
 description: 'Replies back to an issue comment'
-# inputs:
-#   who-to-greet:  # id of input
-#     description: 'Who to greet'
-#     required: true
-#     default: 'World'
-# outputs:
-#   time: # id of output
-#     description: 'The time we we greeted you'
+inputs:
+  repo-token:
+    description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  # args:
-  #   - ${{ inputs.who-to-greet }}
+    GITHUB_TOKEN: ${{ inputs.repo-token }}
