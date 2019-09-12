@@ -25,3 +25,5 @@ async function run() {
 
     const newIssue = await client.issues.createComment(comment_payload)
 }
+
+run();
