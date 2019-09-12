@@ -2,7 +2,7 @@
 FROM alpine:3.10
 
 # GitHub Actions metadata
-# Only necessary when a docker image is the action itself
+# Only necessary when a docker image is the Action itself
 # LABEL "com.github.actions.name"="reply"
 # LABEL "com.github.actions.description"="Replies"
 # LABEL "com.github.actions.icon"="speaker"

@@ -16,7 +16,7 @@ _request() {
     # Payload: {"body": "<message>"}
     # Request: POST /repos/:owner/:repo/issues/:issue_number/comments
     
-    MESSAGE_RAW=$(cat <<EOF
+    MESSAGE_RAW=$(cat <<-EOF
 Hi @$(_user), you said:
 
 > $(_comment)
