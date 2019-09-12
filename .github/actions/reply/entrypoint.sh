@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 set -o pipefail
@@ -15,17 +15,15 @@ _request() {
     # Request: POST /repos/:owner/:repo/issues/:issue_number/comments
 
     MESSAGE_RAW="Hi $(_user), you said:\n\n> $(_comment)"
-    MESSAGE_JSON=$(jq --compact-output --null-input \
-        --arg body "$MESSAGE_RAW" \
-        '{body: $body}')
     
-    echo "'${MESSAGE_JSON}'"
-    curl -vvv -sSL \
-        -H "${HEADER_ACCEPT}" \
-        -H "${HEADER_AUTHZ}" \
-        -H "${HEADER_CONTENT}" \
-        -d "'${MESSAGE_JSON}'" \
-        -X POST "$(_issue_comments_url)"
+    jq --compact-output --null-input \
+        --arg body "$MESSAGE_RAW" \
+        '{body: $body}') | curl -vvv -sSL \
+            -H "${HEADER_ACCEPT}" \
+            -H "${HEADER_AUTHZ}" \
+            -H "${HEADER_CONTENT}" \
+            -d @- \
+            -X POST "$(_issue_comments_url)"
 }
 
 _jq() {
