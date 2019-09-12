@@ -10,15 +10,16 @@ async function run() {
 
     const comment = context.payload.comment.body
     const user    = context.payload.comment.user.login
+    
+    const body = `Hi @${user}, you said:
 
-    console.log(comment)
-    console.log(user)
+    > ${comment}`
 
     const comment_payload = {
         owner: context.payload.repository.owner.login,
-        repo: 'ghapg',
-        issue_number: 6,
-        body: 'POWER'
+        repo:  context.payload.repository.name,
+        issue_number: context.payload.issue.number,
+        body: body
     }
 
     console.log(comment_payload)
