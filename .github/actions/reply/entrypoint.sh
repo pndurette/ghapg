@@ -25,7 +25,7 @@ _request() {
 
     MESSAGE_RAW="Hi @$(_user), you said:\n"
     while read line; do
-        MESSAGE_RAW="${MESSAGE_RAW}\n>$line"
+        # MESSAGE_RAW="${MESSAGE_RAW}\n>$line"
     done <<< "$(_comment)"
 
     jq --compact-output --null-input \
