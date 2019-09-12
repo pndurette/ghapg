@@ -20,9 +20,9 @@ _request() {
         '{body: $body}')
     
     echo curl -vvvv -sSL \
-        -H "${HEADER_ACCEPT}" \
-        -H "${HEADER_AUTHZ}" \
-        -H "${HEADER_CONTENT}" \
+        -H \'${HEADER_ACCEPT}\' \
+        -H \'${HEADER_AUTHZ}\' \
+        -H \'${HEADER_CONTENT}\' \
         -d \'${MESSAGE_JSON}\' \
         -X POST "$(_issue_comments_url)"
 }
