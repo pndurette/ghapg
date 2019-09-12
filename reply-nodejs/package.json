@@ -1,0 +1,24 @@
+{
+  "name": "reply-nodejs",
+  "version": "1.0.0",
+  "description": "Replies back to an issue comment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pndurette/ghapg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pndurette/ghapg/issues"
+  },
+  "homepage": "https://github.com/pndurette/ghapg",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "@actions/github": "^1.1.0"
+  }
+}

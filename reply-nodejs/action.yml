@@ -5,7 +5,5 @@ inputs:
     description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
     required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  env:
-    GITHUB_TOKEN: ${{ inputs.repo-token }}
+  using: 'node12'
+  image: 'index.js'

@@ -5,10 +5,17 @@ on:
     types: [created]
 
 jobs:
-  pong:
+  pong-docker:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - uses: ./reply-docker
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+  pong-nodejs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./reply-nodejs
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
