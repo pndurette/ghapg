@@ -23,7 +23,7 @@ _request() {
         -H "${HEADER_ACCEPT}" \
         -H "${HEADER_AUTHZ}" \
         -H "${HEADER_CONTENT}" \
-        -d "\'${MESSAGE_JSON}\'" \
+        -d "'${MESSAGE_JSON}'" \
         -X POST "$(_issue_comments_url)"
 }
 
