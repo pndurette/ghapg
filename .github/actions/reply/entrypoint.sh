@@ -25,6 +25,7 @@ _request() {
 
     MESSAGE_RAW="Hi @$(_user), you said:\n"
     while read line; do
+        echo "test"
         # MESSAGE_RAW="${MESSAGE_RAW}\n>$line"
     done <<< "$(_comment)"
 
