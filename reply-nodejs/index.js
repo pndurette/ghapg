@@ -7,4 +7,10 @@ const client = new github.GitHub(
 
 const context = github.context
 
-console.log(context)
+// console.log(context)
+
+const comment = context.payload.comment.body
+const user = context.payload.comment.user
+
+console.log(comment)
+console.log(user)
