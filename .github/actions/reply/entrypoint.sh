@@ -4,17 +4,17 @@ set -e
 set -o pipefail
 
 # GitHub API Headers
+# ${GITHUB_TOKEN} must be passed explicitly
+# https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
 HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
 HEADER_AUTHZ="Authorization: token ${GITHUB_TOKEN}"
 HEADER_CONTENT="Content-Type: application/json"
 
 _request() {
-    # Add comment to issue
+    # Add comment to the issue
     # https://developer.github.com/v3/issues/comments/#create-a-comment
     # Payload: {"body": "<message>"}
     # Request: POST /repos/:owner/:repo/issues/:issue_number/comments
-
-    # MESSAGE_RAW="Hi @$(_user), you said:\n\n> $(_comment)"
     
     MESSAGE_RAW=$(cat <<EOF
 Hi @$(_user), you said:
@@ -33,10 +33,10 @@ EOF
 }
 
 _jq() {
+    QUERY=$1
     # All 'jq' queries done on this payload type:
     # https://developer.github.com/v3/activity/events/types/#issuecommentevent
-
-    QUERY=$1
+    # GitHub Actions saves the event payload JSON at $GITHUB_EVENT_PATH
     jq --raw-output "${QUERY}" "$GITHUB_EVENT_PATH"
 }
 
@@ -51,12 +51,8 @@ _user() {
 }
 
 _issue_comments_url() {
-    # Get the issues comments URL API endpoint
+    # Get the issue's comments URL API endpoint
     _jq ".issue | .comments_url"
 }
 
-main() {
-   _request
-}
-
-main
+_request

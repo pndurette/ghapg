@@ -1,15 +1,17 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+name: 'Reply'
+description: 'Replies back to an issue comment'
+# inputs:
+#   who-to-greet:  # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
 # outputs:
 #   time: # id of output
 #     description: 'The time we we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # args:
   #   - ${{ inputs.who-to-greet }}
