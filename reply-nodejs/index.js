@@ -13,7 +13,7 @@ const user    = context.payload.comment.user.login
 console.log(comment)
 console.log(user)
 
-const newIssue = await client.issues.createComment({
+const newIssue = client.issues.createComment({
     owner = context.payload.repository.owner.login,
     repo = 'pndurette',
     issue_number = 6,
