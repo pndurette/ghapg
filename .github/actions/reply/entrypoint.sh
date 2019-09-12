@@ -16,7 +16,7 @@ _request() {
 
     # MESSAGE_RAW="Hi @$(_user), you said:\n\n> $(_comment)"
     
-    MESSAGE_RAW=$(cat <<'EOF'
+    MESSAGE_RAW=$(cat <<EOF
 Hi @$(_user), you said:
 
 > $(_comment)
