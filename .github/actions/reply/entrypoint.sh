@@ -18,7 +18,7 @@ _request() {
     
     jq --compact-output --null-input \
         --arg body "$MESSAGE_RAW" \
-        '{body: $body}') | curl -vvv -sSL \
+        '{body: $body}' | curl -vvv -sSL \
             -H "${HEADER_ACCEPT}" \
             -H "${HEADER_AUTHZ}" \
             -H "${HEADER_CONTENT}" \
