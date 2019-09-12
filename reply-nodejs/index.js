@@ -16,7 +16,7 @@ async function run() {
 
     const comment_payload = {
         owner: context.payload.repository.owner.login,
-        repo: 'pndurette',
+        repo: 'ghapg',
         issue_number: 6,
         body: 'POWER'
     }
