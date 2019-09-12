@@ -19,7 +19,7 @@ _request() {
         --arg body "$MESSAGE_RAW" \
         '{body: $body}')
     
-    curl -vvvv -sSL \
+    echo curl -vvvv -sSL \
         -H "${HEADER_ACCEPT}" \
         -H "${HEADER_AUTHZ}" \
         -H "${HEADER_CONTENT}" \
