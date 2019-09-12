@@ -16,12 +16,18 @@ _request() {
     # Payload: {"body": "<message>"}
     # Request: POST /repos/:owner/:repo/issues/:issue_number/comments
     
-    MESSAGE_RAW=$(cat <<-EOF
-Hi @$(_user), you said:
+#     MESSAGE_RAW=$(cat <<-EOF
+# Hi @$(_user), you said:
 
-> $(_comment)
-EOF
-)
+# > $(_comment)
+# EOF
+# )
+
+    MESSAGE_RAW="Hi @$(_user), you said:\n"
+    while read line; do
+        MESSAGE_RAW="${MESSAGE_RAW}\n>$line"
+    done <<< "$(_comment)"
+
     jq --compact-output --null-input \
         --arg body "$MESSAGE_RAW" \
         '{body: $body}' | curl -vvv -sSL \
