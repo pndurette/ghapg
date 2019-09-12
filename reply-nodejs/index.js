@@ -14,8 +14,8 @@ console.log(comment)
 console.log(user)
 
 const newIssue = client.issues.createComment({
-    owner = context.payload.repository.owner.login,
-    repo = 'pndurette',
-    issue_number = 6,
-    body = 'POWER'
+    owner: context.payload.repository.owner.login,
+    repo: 'pndurette',
+    issue_number: 6,
+    body: 'POWER'
 })
