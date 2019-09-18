@@ -32,11 +32,12 @@ Write an issue comment in this repo to get a response from all 3!
 
 **[3]** while not being an Action per se, is the exact same as [2] but instead of using an `action.yml` (and building a `Dockerfile`), GitHub pulls an image previously pushed to a container registry ([e.g.](https://hub.docker.com/r/pndurette/reply-docker)). Any passing of arguments and environments done in [2]'s `action.yml` must be done explicitly in the Workflow file (using [`args`](https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepswithargs),  [`env`](https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsenv), etc.). e.g.:
 
+```yaml
+  pong-docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker://pndurette/reply-docker:latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-pong-docker-hub:
-	runs-on: ubuntu-latest
-	steps:
-	- uses: docker://pndurette/reply-docker:latest
-		env:
-			GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
+
