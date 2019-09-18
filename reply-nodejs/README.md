@@ -12,7 +12,7 @@ Tested with `types`: `created`
 
 ### `repo-token`
 
-**Required** Token for the repo. Set literallty to `${{ secrets.GITHUB_TOKEN }}`. No default.
+**Required** Token for the repo. Set literally to `${{ secrets.GITHUB_TOKEN }}`. No default.
 
 ## Outputs
 

@@ -13,7 +13,7 @@ Both do the exact same thing and are used the exact same way, but built differen
 
 This exercise shows how to obtain the GitHub event payload in each case, as well as using the [GitHub App token](https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret) to make an authenticated GitHub API call (i.e. posting an issue comment).
 
-#### Usage
+### Usage
 
 This demonstrates the 3 (*AFAIK*) [ways to run a GitHub Action](https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsuses):
 
