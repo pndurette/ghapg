@@ -20,6 +20,8 @@ _request() {
 Hi @$(_user), you said:
 
 > $(_comment)
+
+_(from `reply-docker`)_
 EOF
 )
 
