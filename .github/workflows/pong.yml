@@ -12,12 +12,7 @@ jobs:
     - uses: ./reply-docker
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-  pong-docker-hub:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: docker://pndurette/reply-docker:latest
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
   pong-nodejs:
     runs-on: ubuntu-latest
     steps:
@@ -25,3 +20,10 @@ jobs:
     - uses: ./reply-nodejs
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  pong-docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker://pndurette/reply-docker:latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
