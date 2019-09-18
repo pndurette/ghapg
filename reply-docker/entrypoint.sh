@@ -21,13 +21,13 @@ Hi @$(_user), you said:
 
 > $(_comment)
 
-_(from `reply-docker`)_
+_(by \`reply-docker\`)_
 EOF
 )
 
     jq --compact-output --null-input \
         --arg body "$MESSAGE_RAW" \
-        '{body: $body}' | curl -vvv -sSL \
+        '{body: $body}' | curl -v -sSL \
             -H "${HEADER_ACCEPT}" \
             -H "${HEADER_AUTHZ}" \
             -H "${HEADER_CONTENT}" \

@@ -16,7 +16,7 @@ async function run() {
 
 > ${comment}
 
-_(from \`reply-nodejs\`)_`
+_(by \`reply-nodejs\`)_`
 
     // Param object for octokit.issues.createComment()
     const comment_payload = {
