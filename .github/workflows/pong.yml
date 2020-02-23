@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: ./reply-docker
+    - uses: ./ascii-reply
       if: startsWith(github.event.comment.body, '/hello')
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
