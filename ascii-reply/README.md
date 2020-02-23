@@ -1,6 +1,8 @@
 # `pndurette/ghapg/ascii-reply`
 
-This simple action responds to an issue comment, with the comment in ASCII art text. Can be restricted to a 'command' (e.g. `/hello <text>`).
+This simple action responds to an issue comment, with the comment in ASCII art text.
+
+Can be restricted to a 'command' (e.g. `/ascii <text>`).
 
 ## Events
 
@@ -21,8 +23,8 @@ None
 ## Example usage
 
 ```yaml
-uses: pndurette/ghapg/ascii-reply@master
-if: startsWith(github.event.comment.body, '/hello')
+uses: pndurette/ghapg/ascii-reply@v1
+if: startsWith(github.event.comment.body, '/ascii')
 with:
   repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
