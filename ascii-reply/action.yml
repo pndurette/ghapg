@@ -7,7 +7,7 @@ inputs:
     description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
     required: true
 branding:
-  icon: 'pen-tool'  
+  icon: 'edit-3'  
   color: 'orange'
 runs:
   using: 'docker'
