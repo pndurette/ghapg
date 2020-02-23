@@ -41,3 +41,6 @@ Write an issue comment in this repo to get a response from all 3!
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+## [`ascii-reply`](ascii-reply/)
+
+Similar to `reply-docker` but demonstrates a popular usage of GitHub comments: creating custom comment "commands", i.e. `/command <argument>`.
