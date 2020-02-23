@@ -27,3 +27,12 @@ jobs:
     - uses: docker://pndurette/reply-docker:latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  pong-docker-ascii:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./reply-docker
+      if: startsWith(github.event.comment.body, '/hello')
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
